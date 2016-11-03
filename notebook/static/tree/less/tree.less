@@ -25,7 +25,7 @@ ul#tabs {
 }
 
 [dir="rtl"] ul#tabs {
-    margin-right:0px;
+    padding-right:0px;
 }
 
 ul#tabs a {
@@ -58,7 +58,7 @@ ul.breadcrumb {
 
 [dir="rtl"] .list_toolbar {
     .tree-buttons {
-        float: left !important;
+        float: left;
     }
     
     .pull-right {
@@ -66,9 +66,6 @@ ul.breadcrumb {
         float: left !important;
     }
     
-    .pull-left {
-        float: right !important;
-    }    
 }
 
 .dynamic-buttons {
@@ -267,6 +264,10 @@ ul.breadcrumb {
     margin-right: -1px;
 }
 
+[dir="rtl"] #notebook_toolbar .col-sm-8 {
+    float: right;
+}
+
 ul#new-menu {
     // align right instead of left
     left: auto;
@@ -338,7 +339,7 @@ ul#new-menu {
 
 [dir="rtl"] #running {
     .col-sm-8 {
-        float: right !important;
+        float: right;
     }
 }
 
