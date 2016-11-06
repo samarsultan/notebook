@@ -10,7 +10,15 @@ define([
     var Page = function () {
         this.bind_events();
     };
-
+    
+    function isMirroringEnabled() {
+        return (new RegExp("^(ar|he)").test(navigator.language));
+    }
+    
+    if (isMirroringEnabled()) {
+    	 $("body").attr("dir","rtl");
+    }
+    
     Page.prototype.bind_events = function () {
         // resize site on:
         // - window resize
