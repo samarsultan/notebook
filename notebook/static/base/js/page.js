@@ -4,20 +4,20 @@
 define([
     'jquery',
     'base/js/events',
-], function($, events){
+    'bidi/js/bidi',
+], function($, events, bidi){
     "use strict";
 
     var Page = function () {
         this.bind_events();
     };
+   //bidi.isMirroringEnabled();
     
-    function isMirroringEnabled() {
+   /* function isMirroringEnabled() {
         return (new RegExp("^(ar|he)").test(navigator.language));
-    }
+    }*/
     
-    if (isMirroringEnabled()) {
-    	 $("body").attr("dir","rtl");
-    }
+    
     
     Page.prototype.bind_events = function () {
         // resize site on:
@@ -38,6 +38,9 @@ define([
          * The header and site divs start out hidden to prevent FLOUC.
          * Main scripts should call this method after styling everything.
          */
+    	if (bidi.isMirroringEnabled()) {
+       	 $("body").attr("dir","rtl");
+       }
         this.show_header();
         this.show_site();
     };
